@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Logs</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- 스타일 추가 (선택 사항) -->
+</head>
+<body>
+<h1>Error Logs</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Request URI</th>
+        <th>Status Code</th>
+        <th>Error Message</th>
+        <th>Request Headers</th>
+        <th>Timestamp</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="log : ${errorLogs}">
+        <td th:text="${log.errorLogId}">1</td>
+        <td th:text="${log.requestUri}">/example/uri</td>
+        <td th:text="${log.statusCode}">500</td>
+        <td th:text="${log.errorMessage}">Error message</td>
+        <td th:text="${log.requestHeaders}">Headers here</td>
+        <td th:text="${log.timestamp}">2023-01-01 12:00</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
